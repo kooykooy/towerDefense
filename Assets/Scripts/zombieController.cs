@@ -6,14 +6,18 @@ public class ZombieController : MonoBehaviour {
 
     ZombieData zombieData;
     int currentPath;
+    public Sprite[] spriteZombie;
+    Sprite currentSprite;
 
 	// Use this for initialization
 	void Start () {
+        currentSprite = spriteZombie[0];
+        GetComponent<SpriteRenderer>().sprite = currentSprite;
         zombieData = ScriptableObject.CreateInstance<ZombieData>();
         zombieData.path = new Vector2[3];
-        zombieData.path[0] = new Vector2(0, 0);
-        zombieData.path[1] = new Vector2(5, 0);
-        zombieData.path[2] = new Vector2(-5, 2);
+        zombieData.path[0] = new Vector2(-6.11f, -5.4f);
+        zombieData.path[1] = new Vector2(-6.11f, 3);
+        zombieData.path[2] = new Vector2(9.5f, 3);
         currentPath = 0;
     }
 	
