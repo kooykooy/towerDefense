@@ -6,19 +6,16 @@ public class ZombieController : MonoBehaviour {
 
     ZombieData zombieData;
     int currentPath;
-    public Sprite[] spriteZombie;
-    Sprite currentSprite;
 
 	// Use this for initialization
-	void Start () {
-        currentSprite = spriteZombie[0];
-        GetComponent<SpriteRenderer>().sprite = currentSprite;
+	void Start () { 
         zombieData = ScriptableObject.CreateInstance<ZombieData>();
         zombieData.path = new Vector2[3];
         zombieData.path[0] = new Vector2(-6.11f, -5.4f);
         zombieData.path[1] = new Vector2(-6.11f, 3);
-        zombieData.path[2] = new Vector2(9.5f, 3);
+        zombieData.path[2] = new Vector2(14f, 3);
         currentPath = 0;
+
     }
 	
 	// Update is called once per frame
@@ -44,6 +41,7 @@ public class ZombieController : MonoBehaviour {
                 {
                     transform.Translate(Vector2.down * Time.deltaTime * zombieData.movementSpeed);
                 }
+                
             }
             else
             {
